@@ -44,10 +44,12 @@ nav {
 .navbar-items_item {
     display: inline-block;
     padding: 10px;
+    font-weight: 700;
+    color: #7c7c7c;
 }
 
 .navbar-items_item.active {
-    font-weight: 700;
+    color: #000;
 }
 
 .navbar-items_item a:hover {
