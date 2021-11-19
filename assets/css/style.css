@@ -20,8 +20,11 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    min-height: 98vh;
     height: 98vh;
 }
+
+/*header*/
 
 header {
     display: flex;
@@ -67,6 +70,8 @@ nav {
     display: none;
 }
 
+/*page*/
+
 main {
     display: flex;
     justify-content: center;
@@ -83,9 +88,18 @@ main {
     border-radius: 7px;
 }
 
+.container.center {
+    justify-content: center;
+}
+
+.container.sb {
+    justify-content: space-between;
+}
+
+/*index*/
+
 .intro {
-    width: 50%;
-    margin-left: 8%;
+    width: 90%;
 }
 
 .intro div {
@@ -133,6 +147,90 @@ main {
 .intro a span {
     margin: 0 10px;
 }
+
+/*about me*/
+
+.arrow {
+    flex-basis: 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.about {
+    flex-basis: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+.about div {
+    display: none;
+}
+
+.about .active {
+    display: unset;
+}
+
+.about-me.active {
+    display: block;
+    width: 70%;
+    text-align: center;
+    font-size: 1.05rem;
+}
+
+.about-me p {
+    color: #5f6067;
+}
+
+.about-me div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.about-me div a {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 50px 0 10px 0;
+    padding: 10px 5px;
+    border-radius: 5px;
+    fill: #000;
+    color: #000;
+}
+
+.about-me div a span {
+    margin-left: 10px;
+}
+
+.skills.active {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 1.05rem;
+}
+
+.skills .text {
+    display: block;
+    width: 40%;
+}
+
+.skills .text p {
+    color: #5f6067;
+}
+
+.skills .visual {
+    display: block;
+    width: 50%;
+}
+
+.education {
+
+}
+
+.work-experience {
+
+}
+
+/*footer*/
 
 footer {
     display: flex;
