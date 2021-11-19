@@ -1,7 +1,6 @@
 setInterval(function() {
     const words = document.getElementsByClassName("word");
     let currentId = 1;
-    let nextId;
 
     for (const word of words) {
         if (word.classList.contains("active")) {
@@ -9,12 +8,7 @@ setInterval(function() {
         }
     }
 
-    if (currentId === words.length) {
-        nextId = 1;
-    }
-    else {
-        nextId = currentId + 1;
-    }
+    const nextId = currentId === words.length ? 1 : currentId + 1
 
     for (const word of words) {
         word.classList.remove("active");
