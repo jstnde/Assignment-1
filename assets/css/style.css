@@ -49,6 +49,7 @@ nav {
     display: flex;
     align-items: center;
     list-style: none;
+    padding: 0;
 }
 
 .navbar-items_item {
@@ -279,7 +280,7 @@ main {
     visibility: visible;
 }
 
-.education .active {
+.education.active {
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -288,11 +289,29 @@ main {
 
 .education .text {
     display: block;
-    flex-basis: 40%;
+    width: 100%;
 }
 
-.education .text .box {
+.education .text .holder {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.education .text .holder .box {
     display: block;
+    margin: 20px 0;
+}
+
+.education .text .holder .box span {
+    display: block;
+    color: #4d4d4d;
+}
+
+.box .time {
+    font-size: 1.15em;
 }
 
 .work-experience {
