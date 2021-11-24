@@ -263,11 +263,11 @@ main {
     border: 1px solid black;
     border-radius: 5px;
     padding: 5px 0;
+    transition: visibility .15s;
 
     position: absolute;
     z-index: 1;
     bottom: 110%;
-    transition: visibility .15s;
  }
 
 .visual .box:hover {
@@ -310,12 +310,42 @@ main {
     color: #4d4d4d;
 }
 
-.box .time {
+.education .text .holder .box .time {
     font-size: 1.15em;
 }
 
-.work-experience {
+.work-experience.active {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 1.05rem;
+}
 
+.work-experience .text {
+    display: block;
+    width: 100%;
+}
+
+.work-experience .text .holder {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.work-experience .text .holder .box {
+    display: block;
+    margin: 20px 0;
+}
+
+.work-experience .text .holder .box span {
+    display: block;
+    color: #4d4d4d;
+}
+
+.work-experience .text .holder .box .time {
+    font-size: 1.15em;
 }
 
 /*footer*/
