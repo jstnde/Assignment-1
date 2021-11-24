@@ -313,6 +313,11 @@ main {
 .education .text .holder .box span {
     display: block;
     color: #4d4d4d;
+    transition: color .3s;
+}
+
+.education .text .holder .box:hover span {
+    color: black;
 }
 
 .education .text .holder .box .time {
@@ -347,6 +352,11 @@ main {
 .work-experience .text .holder .box span {
     display: block;
     color: #4d4d4d;
+    transition: color .3s;
+}
+
+.work-experience .text .holder .box:hover span {
+    color: #000;
 }
 
 .work-experience .text .holder .box .time {
