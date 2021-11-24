@@ -156,6 +156,18 @@ main {
     justify-content: center;
 }
 
+.arrow.prev {
+    justify-content: flex-end;
+}
+
+.arrow.next {
+    justify-content: flex-start;
+}
+
+.arrow svg:hover {
+    cursor: pointer;
+}
+
 .about {
     flex-basis: 80%;
     display: flex;
@@ -209,8 +221,10 @@ main {
 }
 
 .skills .text {
-    display: block;
-    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-basis: 40%;
 }
 
 .skills .text p {
@@ -218,12 +232,67 @@ main {
 }
 
 .skills .visual {
-    display: block;
-    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-basis: 50%;
 }
 
-.education {
+.visual .box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+    background-color: #fff;
+    border: 1px solid black;
+    border-radius: 5px;
+    transition: background-color .3s, fill .3s;
+    position: relative;
+}
 
+.tooltip {
+    visibility: hidden;
+    width: 100px;
+    background-color: #484545;
+    color: #fff;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px 0;
+
+    position: absolute;
+    z-index: 1;
+    bottom: 110%;
+    transition: visibility .15s;
+ }
+
+.visual .box:hover {
+    background-color: #000;
+    fill: #fff;
+    box-shadow: -7px -7px 7px #fff, 10px 10px 25px #aeaec0;
+}
+
+.box:hover .tooltip {
+    visibility: visible;
+}
+
+.education .active {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 1.05rem;
+}
+
+.education .text {
+    display: block;
+    flex-basis: 40%;
+}
+
+.education .text .box {
+    display: block;
 }
 
 .work-experience {
