@@ -317,7 +317,7 @@ main {
 }
 
 .education .text .holder .box:hover span {
-    color: black;
+    color: #000;
 }
 
 .education .text .holder .box .time {
@@ -379,18 +379,59 @@ main {
     display: unset;
 }
 
+.projects.active {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 1.05rem;
+}
+
 .projects .text {
     display: block;
+    width: 100%;
 }
 
 .projects .text .holder {
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
 }
 
-.projects.active .text .holder .box {
-    display: flex;
+.projects .text .holder .box {
+    display: block;
+    margin: 20px 0;
+    width: 30%;
     border: 1px solid #000;
     border-radius: 5px;
+    text-align: center;
+}
+
+.projects .text .holder .box span {
+    display: block;
+    padding: 5px;
+}
+
+.projects .text .holder .box .img img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #000;
+}
+
+.projects .text .holder .box .title {
+    font-size: 1em;
+    font-weight: 700;
+}
+
+.projects .text .holder .box .link a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    background-color: #000;
+    border-radius: 5px;
+    fill: #fff;
+    color: #fff;
 }
 
 /*footer*/
