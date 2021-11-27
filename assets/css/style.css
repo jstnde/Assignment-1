@@ -363,6 +363,36 @@ main {
     font-size: 1.15em;
 }
 
+/*work*/
+
+.work {
+    flex-basis: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+.work div {
+    display: none;
+}
+
+.work .active {
+    display: unset;
+}
+
+.projects .text {
+    display: block;
+}
+
+.projects .text .holder {
+    display: block;
+}
+
+.projects.active .text .holder .box {
+    display: flex;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
 /*footer*/
 
 footer {

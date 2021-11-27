@@ -20,30 +20,38 @@ setInterval(function() {
 
 const arrowBtn = document.getElementsByClassName("arrow")
 
+
+
 for (const btn of arrowBtn) {
+    const pageName = btn.parentElement.children[1].classList[0];
+    const page = document.getElementsByClassName(pageName)[0];
+    const pageChildren = page.children;
+
+    if (pageChildren.length < 2) {
+        btn.setAttribute("style", "display: none;");
+    }
+
     btn.addEventListener("click", function() {
-        const about = document.getElementsByClassName("about")[0];
-        const aboutPages = about.children;
         let currentId = 1;
         let nextId;
 
-        for (const aboutPage of aboutPages) {
-            if (aboutPage.classList.contains("active")) {
-                currentId = parseInt(aboutPage.attributes.getNamedItem("data-id").value);
+        for (const children of pageChildren) {
+            if (children.classList.contains("active")) {
+                currentId = parseInt(children.attributes.getNamedItem("data-id").value);
             }
         }
 
         if (this.classList.contains("prev")) {
-            nextId = currentId === 1 ? aboutPages.length : currentId - 1;
+            nextId = currentId === 1 ? pageChildren.length : currentId - 1;
         }
         else {
-            nextId = currentId === aboutPages.length ? 1 : currentId + 1;
+            nextId = currentId === pageChildren.length ? 1 : currentId + 1;
         }
 
-        for (const aboutPage of aboutPages) {
-            aboutPage.classList.remove("active");
-            if (parseInt(aboutPage.attributes.getNamedItem("data-id").value) === nextId) {
-                aboutPage.classList.add("active");
+        for (const children of pageChildren) {
+            children.classList.remove("active");
+            if (parseInt(children.attributes.getNamedItem("data-id").value) === nextId) {
+                children.classList.add("active");
             }
         }
     });
