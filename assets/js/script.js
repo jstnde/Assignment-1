@@ -28,7 +28,7 @@ for (const btn of arrowBtn) {
     const pageChildren = page.children;
 
     if (pageChildren.length < 2) {
-        btn.setAttribute("style", "display: none;");
+        btn.setAttribute("style", "visibility: hidden;");
     }
 
     btn.addEventListener("click", function() {
