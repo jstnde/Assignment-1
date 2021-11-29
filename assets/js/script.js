@@ -1,58 +1,97 @@
-setInterval(function() {
-    const words = document.getElementsByClassName("word");
-    let currentId = 1;
+const pages = ["index", "about-me", "work", "contact"];
+const currentPage = window.location.href;
+let pageNo = 0;
 
-    for (const word of words) {
-        if (word.classList.contains("active")) {
-            currentId = parseInt(word.attributes.getNamedItem("data-id").value);
-        }
+for (const pagesKey in pages) {
+    if (currentPage.includes(pages[pagesKey])) {
+        pageNo = parseInt(pagesKey);
     }
+}
 
-    const nextId = currentId === words.length ? 1 : currentId + 1;
+switch (pageNo) {
+    case 0:
+        wordWrap();
+        break;
+    case 1:
+        email();
+        pageWrap();
+        break;
+    case 2:
+        pageWrap();
+        break;
+    case 3:
+        email();
+        break;
+    default:
+        break;
+}
 
-    for (const word of words) {
-        word.classList.remove("active");
-        if (parseInt(word.attributes.getNamedItem("data-id").value) === nextId) {
-            word.classList.add("active");
-        }
-    }
-}, 3000);
-
-const arrowBtn = document.getElementsByClassName("arrow")
-
-
-
-for (const btn of arrowBtn) {
-    const pageName = btn.parentElement.children[1].classList[0];
-    const page = document.getElementsByClassName(pageName)[0];
-    const pageChildren = page.children;
-
-    if (pageChildren.length < 2) {
-        btn.setAttribute("style", "visibility: hidden;");
-    }
-
-    btn.addEventListener("click", function() {
+function wordWrap() {
+    setInterval(function() {
+        const words = document.getElementsByClassName("word");
         let currentId = 1;
-        let nextId;
 
-        for (const children of pageChildren) {
-            if (children.classList.contains("active")) {
-                currentId = parseInt(children.attributes.getNamedItem("data-id").value);
+        for (const word of words) {
+            if (word.classList.contains("active")) {
+                currentId = parseInt(word.attributes.getNamedItem("data-id").value);
             }
         }
 
-        if (this.classList.contains("prev")) {
-            nextId = currentId === 1 ? pageChildren.length : currentId - 1;
-        }
-        else {
-            nextId = currentId === pageChildren.length ? 1 : currentId + 1;
-        }
+        const nextId = currentId === words.length ? 1 : currentId + 1;
 
-        for (const children of pageChildren) {
-            children.classList.remove("active");
-            if (parseInt(children.attributes.getNamedItem("data-id").value) === nextId) {
-                children.classList.add("active");
+        for (const word of words) {
+            word.classList.remove("active");
+            if (parseInt(word.attributes.getNamedItem("data-id").value) === nextId) {
+                word.classList.add("active");
             }
         }
-    });
+    }, 3000);
+}
+
+function pageWrap() {
+    const arrowBtn = document.getElementsByClassName("arrow")
+
+    for (const btn of arrowBtn) {
+        const pageName = btn.parentElement.children[1].classList[0];
+        const page = document.getElementsByClassName(pageName)[0];
+        const pageChildren = page.children;
+
+        if (pageChildren.length < 2) {
+            btn.setAttribute("style", "visibility: hidden;");
+        }
+
+        btn.addEventListener("click", function() {
+            let currentId = 1;
+            let nextId;
+
+            for (const children of pageChildren) {
+                if (children.classList.contains("active")) {
+                    currentId = parseInt(children.attributes.getNamedItem("data-id").value);
+                }
+            }
+
+            if (this.classList.contains("prev")) {
+                nextId = currentId === 1 ? pageChildren.length : currentId - 1;
+            }
+            else {
+                nextId = currentId === pageChildren.length ? 1 : currentId + 1;
+            }
+
+            for (const children of pageChildren) {
+                children.classList.remove("active");
+                if (parseInt(children.attributes.getNamedItem("data-id").value) === nextId) {
+                    children.classList.add("active");
+                }
+            }
+        });
+    }
+}
+
+function email() {
+    const emailBtns = document.getElementsByClassName("email");
+    for (const emailBtn of emailBtns) {
+        emailBtn.addEventListener("click", function() {
+            alert("Thank you for contacting me! :))");
+        });
+    }
 }
