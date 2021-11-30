@@ -1,3 +1,4 @@
+// find current page
 const pages = ["index", "about-me", "work", "contact"];
 const currentPage = window.location.href;
 let pageNo = 0;
@@ -26,6 +27,7 @@ switch (pageNo) {
         break;
 }
 
+// 3 second word wrap
 function wordWrap() {
     setInterval(function() {
         const words = document.getElementsByClassName("word");
@@ -48,6 +50,7 @@ function wordWrap() {
     }, 3000);
 }
 
+// page "carousel"
 function pageWrap() {
     const arrowBtn = document.getElementsByClassName("arrow")
 
@@ -87,6 +90,7 @@ function pageWrap() {
     }
 }
 
+// email alert
 function email() {
     const emailBtns = document.getElementsByClassName("email");
     for (const emailBtn of emailBtns) {
