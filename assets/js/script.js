@@ -1,5 +1,5 @@
 // find current page
-const pages = ["index", "about-me", "work", "contact"];
+const pages = ["index", "about-me", "project", "contact"];
 const currentPage = window.location.href;
 let pageNo = 0;
 
