@@ -99,3 +99,20 @@ function email() {
         });
     }
 }
+
+// display project description (mobile)
+function displayDescription(e) {
+    const holder = e.parentElement.parentElement;
+
+    for (const child of holder.children) {
+        const classes = child.classList;
+        if (classes.contains("box")) {
+            if (classes.contains("active")) {
+                classes.remove("active");
+            }
+            else {
+                classes.add("active");
+            }
+        }
+    }
+}
