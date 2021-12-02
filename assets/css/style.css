@@ -25,7 +25,6 @@ body {
 }
 
 /*header*/
-
 header {
     display: flex;
     flex-direction: row;
@@ -72,7 +71,6 @@ nav {
 }
 
 /*page*/
-
 main {
     display: flex;
     justify-content: center;
@@ -98,7 +96,6 @@ main {
 }
 
 /*index*/
-
 .intro {
     width: 90%;
 }
@@ -150,7 +147,6 @@ main {
 }
 
 /*about me*/
-
 .arrow {
     flex-basis: 5%;
     display: flex;
@@ -369,7 +365,6 @@ main {
 }
 
 /*work*/
-
 .work {
     flex-basis: 80%;
     display: flex;
@@ -488,7 +483,6 @@ main {
 }
 
 /*contact*/
-
 .contact {
     flex-basis: 80%;
     display: flex;
@@ -556,11 +550,9 @@ main {
 }
 
 /*responsiveness*/
-
 @media screen and (max-width: 560px) {
 
     /*work*/
-
     .projects .text .holder .box {
         width: 100%;
         display: none;
@@ -581,7 +573,6 @@ main {
     }
 
     /*contact*/
-
     .contact .text {
         padding: 10%;
         background-color: transparent;
@@ -610,7 +601,6 @@ main {
 }
 
 /*footer*/
-
 footer {
     display: flex;
     justify-content: center;
